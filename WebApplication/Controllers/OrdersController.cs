@@ -12,13 +12,17 @@ namespace WebApplication.Controllers
 {
     public class OrdersController : Controller
     {
-        private DataContext db = new DataContext();
+        private IGenericRepository<Order> RepO = new GenericRepository<Order>();
+        private IGenericRepository<Client> RepC = new GenericRepository<Client>();
+        private IGenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
 
         // GET: Orders
         public ActionResult Index()
         {
-            var orders = db.orders.Include(o => o.Client).Include(o => o.ServiceType);
-            return View(orders.ToList());
+            IEnumerable<Client> clients = RepC.GetAll();
+            ViewBag.idClient = clients;
+            var orders = RepO.GetAll().Include(o => o.Client).Include(o => o.ServiceType);
+            return View(orders);
         }
 
         // GET: Orders/Details/5
@@ -28,7 +32,9 @@ namespace WebApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.orders.Find(id);
+            IEnumerable<Client> clients = RepC.GetAll();
+            ViewBag.idClient = clients;
+            Order order = RepO.FindBy(item => item.idOrder == id).FirstOrDefault();
             if (order == null)
             {
                 return HttpNotFound();
@@ -39,8 +45,8 @@ namespace WebApplication.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.idClient = new SelectList(db.сlients, "idClient", "clientName");
-            ViewBag.nameService = new SelectList(db.serviceTypes, "nameService", "nameService");
+            ViewBag.idClient = new SelectList(RepC.GetAll(), "idClient", "clientName");
+            ViewBag.nameService = new SelectList(RepST.GetAll(), "nameService", "nameService");
             return View();
         }
 
@@ -53,13 +59,19 @@ namespace WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.orders.Add(order);
-                db.SaveChanges();
+
+                Order orderAdd = new Order(order.nameService, order.lawnArea);
+                order.totalCost = orderAdd.totalCost;
+                order.orderTime = orderAdd.orderTime;
+
+
+                RepO.Add(order);
+                RepO.Save();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idClient = new SelectList(db.сlients, "idClient", "clientName", order.idClient);
-            ViewBag.nameService = new SelectList(db.serviceTypes, "nameService", "nameService", order.nameService);
+            ViewBag.idClient = new SelectList(RepC.GetAll(), "idClient", "clientName", order.idClient);
+            ViewBag.nameService = new SelectList(RepST.GetAll(), "nameService", "nameService", order.nameService);
             return View(order);
         }
 
@@ -70,13 +82,13 @@ namespace WebApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.orders.Find(id);
+            Order order = RepO.FindBy(item => item.idOrder == id).FirstOrDefault();
             if (order == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idClient = new SelectList(db.сlients, "idClient", "clientName", order.idClient);
-            ViewBag.nameService = new SelectList(db.serviceTypes, "nameService", "nameService", order.nameService);
+            ViewBag.idClient = new SelectList(RepC.GetAll(), "idClient", "clientName", order.idClient);
+            ViewBag.nameService = new SelectList(RepST.GetAll(), "nameService", "nameService", order.nameService);
             return View(order);
         }
 
@@ -89,12 +101,14 @@ namespace WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
-                db.SaveChanges();
+                Order newOrder = new Order(order.nameService, order.lawnArea);
+                order.totalCost = newOrder.totalCost;
+                RepO.Edit(order);
+                RepO.Save();
                 return RedirectToAction("Index");
             }
-            ViewBag.idClient = new SelectList(db.сlients, "idClient", "clientName", order.idClient);
-            ViewBag.nameService = new SelectList(db.serviceTypes, "nameService", "nameService", order.nameService);
+            ViewBag.idClient = new SelectList(RepC.GetAll(), "idClient", "clientName", order.idClient);
+            ViewBag.nameService = new SelectList(RepST.GetAll(), "nameService", "nameService", order.nameService);
             return View(order);
         }
 
@@ -105,7 +119,9 @@ namespace WebApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.orders.Find(id);
+            IEnumerable<Client> clients = RepC.GetAll();
+            ViewBag.idClient = clients;
+            Order order = RepO.FindBy(item => item.idOrder == id).FirstOrDefault();
             if (order == null)
             {
                 return HttpNotFound();
@@ -118,19 +134,19 @@ namespace WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.orders.Find(id);
-            db.orders.Remove(order);
-            db.SaveChanges();
+            Order order = RepO.FindBy(item => item.idOrder == id).FirstOrDefault();
+            RepO.Delete(order);
+            RepO.Save();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }

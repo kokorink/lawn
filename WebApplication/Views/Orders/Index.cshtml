@@ -9,6 +9,7 @@
 <p></p>
 <table class="table">
     <tr>
+        <th>Номер заказа</th>
         <th>Имя клиента</th>
         <th>Тип услуги</th>
         <th>Адрес</th>
@@ -21,10 +22,20 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Client.clientName)
+            @Html.DisplayFor(modelItem => item.idOrder)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ServiceType.nameService)
+            @foreach (var value in ViewBag.idClient)
+            {
+                if (item.idClient == value.idClient)
+                {
+                    @Html.Raw((string)value.clientName);
+                }
+            }
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nameService)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.lawnAdress)
@@ -39,9 +50,9 @@
             @Html.DisplayFor(modelItem => item.orderTime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idOrder }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idOrder }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idOrder })
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.idOrder }) |
+            @Html.ActionLink("Детализация", "Details", new { id = item.idOrder }) |
+            @Html.ActionLink("Удаление", "Delete", new { id = item.idOrder })
         </td>
     </tr>
 }

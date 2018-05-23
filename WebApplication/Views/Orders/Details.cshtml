@@ -1,58 +1,57 @@
 ﻿@model DomainModel.Order
 
-@{
-    ViewBag.Title = "Details";
-}
 
-<h2>Details</h2>
+
+<h2>Детализация</h2>
 
 <div>
-    <h4>Order</h4>
+
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Client.clientName)
-        </dt>
+        <dt>Номер заказа</dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Client.clientName)
+            @Html.DisplayFor(model => model.idOrder)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ServiceType.nameService)
-        </dt>
+
+        <dt>Имя клиента</dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ServiceType.nameService)
+            @foreach (var value in ViewBag.idClient)
+            {
+                if (Model.idClient == value.idClient)
+                {
+                    @Html.Raw((string)value.clientName);
+                }
+            }
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.lawnAdress)
-        </dt>
+        <dt>Услуга</dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nameService)
+        </dd>
+
+        <dt>Адрес</dt>
 
         <dd>
             @Html.DisplayFor(model => model.lawnAdress)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.lawnArea)
-        </dt>
+        <dt>Площадь</dt>
 
         <dd>
             @Html.DisplayFor(model => model.lawnArea)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.totalCost)
-        </dt>
+        <dt>Стоимость</dt>
 
         <dd>
             @Html.DisplayFor(model => model.totalCost)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.orderTime)
-        </dt>
+        <dt>Время</dt>
 
         <dd>
             @Html.DisplayFor(model => model.orderTime)
@@ -60,7 +59,7 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idOrder }) |
-    @Html.ActionLink("Back to List", "Index")
+<p class="btn btn-default">
+    
+    @Html.ActionLink("Назад", "Index")
 </p>

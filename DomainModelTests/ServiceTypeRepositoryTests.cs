@@ -68,12 +68,12 @@ namespace DomainModelTests
             ServiceType TestServiceType = new ServiceType { nameService = "EditTestName", priceService = 100 };
             RepST.Add(TestServiceType);
             RepST.Save();
-            TestServiceType = RepST.FindBy(item => item.priceService == 100).FirstOrDefault();
+            TestServiceType = RepST.FindBy(item => item.nameService == "EditTestName").FirstOrDefault();
             TestServiceType.priceService = 150;
             RepST.Edit(TestServiceType);
             RepST.Save();
-            Assert.AreNotEqual(RepST.FindBy(item => item.priceService == 100).Count(), 1);
-            Assert.AreEqual(RepST.FindBy(item => item.priceService == 150).Count(), 1);
+            Assert.AreNotEqual(RepST.FindBy(item => item.nameService == "EditTestName").FirstOrDefault().priceService, 100);
+            Assert.AreEqual(RepST.FindBy(item => item.nameService == "EditTestName").FirstOrDefault().priceService, 150);
             RepST.Delete(TestServiceType);
             RepST.Save();
         }
