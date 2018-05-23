@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DomainModel.Order>
+
+
+<h2>Заказы</h2>
+
+<p class="btn btn-default">
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<p></p>
+<table class="table">
+    <tr>
+        <th>Имя клиента</th>
+        <th>Тип услуги</th>
+        <th>Адрес</th>
+        <th>Площадь газона</th>
+        <th>Стоимость</th>
+        <th>Время заказа</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.clientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceType.nameService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lawnAdress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lawnArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idOrder }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idOrder }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idOrder })
+        </td>
+    </tr>
+}
+
+</table>

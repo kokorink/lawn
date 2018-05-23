@@ -1,0 +1,40 @@
+﻿@model DomainModel.ServiceType
+
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотете удалить услугу @Html.DisplayFor(model => model.nameService)? </h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Название</dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nameService)
+        </dd>
+
+
+
+        <dt>Цена за кв.метр</dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priceService)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+        </div>
+<p></p>
+        <div class="btn btn-default">
+            @Html.ActionLink("Отмена", "Index")
+        </div>
+
+    }
+</div>

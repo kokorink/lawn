@@ -1,0 +1,28 @@
+﻿@model DomainModel.Client
+
+
+<h2>Детализация</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>ID клиента</dt>
+        <dd>
+            @Html.DisplayFor(model => model.idClient)
+        </dd>
+
+        <dt>Имя клиента</dt>
+        <dd>
+            @Html.DisplayFor(model => model.clientName)
+        </dd>
+
+        <dt>Телефон клиента</dt>
+        <dd>
+            @Html.DisplayFor(model => model.clientPhone)
+        </dd>
+
+    </dl>
+</div>
+<p  class="btn btn-default">
+    @Html.ActionLink("Вернуться", "Index")
+</p>
