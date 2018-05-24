@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        GetAllClients();
+    });
+
+    // Получение всех клиентов по ajax-запросу
+    function GetAllClients() {
+        $.ajax({
+            url: '/api/ClientAPI/',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+
+                WriteResponse(data);
+            }
+        });
+    }
+
+    function WriteResponse(clients) {
+        var strResult = "<table class='table'><tr><th>Имя клиента</th><th>Телефон</th><th></th></tr>";
+        $.each(clients, function (index, client) {
+            strResult += "<tr><td>" + client.clientName + "</td><td>" + client.clientPhone +
+
+                "<a data-item='" + client.idClient + "' onclick='ViewItem(this);'>Детализация</a> | " +
+                "<a data-item='" + client.idClient + "' onclick='EditItem(this);'>Изменение</a> | " +
+                "<a data-item='" + client.idClient + "' onclick='DeleteItem(this);'>Удаление</a> </td> </tr>"
+                ;
+        });
+        strResult += "</table>";
+        $("#tableBlock").html(strResult);
+
+    }
+
+</script>
+
+<h2>Работа с API</h2>
+<div class="form-group">
+    <a class="btn btn-default" id="AddButton" onclick='AddCall();'>Добавить отзыв</a>
+</div>
+<div id="tableBlock"></div>
