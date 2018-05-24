@@ -26,7 +26,7 @@
     function WriteResponse(clients) {
         var strResult = "<table class='table'><tr><th>Имя клиента</th><th>Телефон</th><th></th></tr>";
         $.each(clients, function (index, client) {
-            strResult += "<tr><td>" + client.clientName + "</td><td>" + client.clientPhone +
+            strResult += "<tr><td>" + client.clientName + "</td><td>" + client.clientPhone + "</td><td>
 
                 "<a data-item='" + client.idClient + "' onclick='ViewItem(this);'>Детализация</a> | " +
                 "<a data-item='" + client.idClient + "' onclick='EditItem(this);'>Изменение</a> | " +
