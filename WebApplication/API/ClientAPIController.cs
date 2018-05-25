@@ -19,9 +19,12 @@ namespace WebApplication.API
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public Client Get(int id)
         {
-            return "value";
+            IGenericRepository<Client> RepC = new GenericRepository<Client>();
+            Client client = RepC.FindBy(item => item.idClient == id).FirstOrDefault();
+            return client;
+
         }
 
         // POST api/<controller>

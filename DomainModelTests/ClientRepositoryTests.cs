@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using DomainModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,10 +15,12 @@ namespace DomainModelTests
         {
             Client TestClient = new Client { clientName = "GetAllName", clientPhone = "GetAllPhone" };
             GenericRepository<Client> RepС = new GenericRepository<Client>();
+            int GetAllClientCount = RepС.GetAll().Count();
             RepС.Add(TestClient);
             RepС.Save();
-            int findByClientCount = RepС.FindBy(item => item.clientName == "GetAllName").Count();
-            Assert.AreEqual(findByClientCount, 1);
+            var test = RepС.GetAll();
+            Assert.AreEqual(test.Count(), GetAllClientCount + 1);
+            Assert.IsInstanceOfType(test, typeof(DbSet<Client>));
             RepС.Delete(TestClient);
             RepС.Save();
         }
@@ -38,11 +41,14 @@ namespace DomainModelTests
         [TestMethod]
         public void AddTestClient()
         {
+            //Arange 
             GenericRepository<Client> RepC = new GenericRepository<Client>();
             Client TestClient = new Client { clientName = "AddTestName", clientPhone = "AddTestPhone" };
             int count = RepC.GetAll().Where(item => item.clientPhone == "AddTestPhone").Count();
+            //Act 
             RepC.Add(TestClient);
             RepC.Save();
+            //Assert
             Assert.AreEqual(count + 1, RepC.FindBy(item => item.clientPhone == "AddTestPhone").Count());
             RepC.Delete(TestClient);
             RepC.Save();

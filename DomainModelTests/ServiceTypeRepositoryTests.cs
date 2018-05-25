@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using DomainModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,26 +13,29 @@ namespace DomainModelTests
         public void GetAllTestServiceType()
         {
             ServiceType TestServiceType = new ServiceType { nameService = "GetAllName", priceService = 100 };
-            GenericRepository<ServiceType> RepС = new GenericRepository<ServiceType>();
-            RepС.Add(TestServiceType);
-            RepС.Save();
-            int findByClientCount = RepС.FindBy(item => item.nameService == "GetAllName").Count();
-            Assert.AreEqual(findByClientCount, 1);
-            RepС.Delete(TestServiceType);
-            RepС.Save();
+            GenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
+            int startCount = RepST.GetAll().Count();
+            RepST.Add(TestServiceType);
+            RepST.Save();
+            var test = RepST.GetAll();
+            int findByClientCount = RepST.GetAll().Count();
+            Assert.AreEqual(findByClientCount, startCount+1);
+            Assert.IsInstanceOfType(test, typeof(DbSet<ServiceType>));
+            RepST.Delete(TestServiceType);
+            RepST.Save();
         }
 
         [TestMethod]
         public void FindByTestServiceType()
         {
             ServiceType TestServiceType = new ServiceType { nameService = "FindByName", priceService = 100 };
-            GenericRepository<ServiceType> RepС = new GenericRepository<ServiceType>();
-            RepС.Add(TestServiceType);
-            RepС.Save();
-            ServiceType findByClient = RepС.FindBy(item => item.nameService == "FindByName").First();
+            GenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
+            RepST.Add(TestServiceType);
+            RepST.Save();
+            ServiceType findByClient = RepST.FindBy(item => item.nameService == "FindByName").First();
             Assert.AreEqual(findByClient.priceService, 100);
-            RepС.Delete(TestServiceType);
-            RepС.Save();
+            RepST.Delete(TestServiceType);
+            RepST.Save();
         }
 
         [TestMethod]

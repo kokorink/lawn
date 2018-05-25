@@ -6,42 +6,136 @@
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 
 <script>
+
+
     $(document).ready(function () {
-        GetAllClients();
+        OrderList();
     });
 
     // Получение всех клиентов по ajax-запросу
-    function GetAllClients() {
+    function ClientList() {
+        $("#mainBlock").html("");
         $.ajax({
             url: '/api/ClientAPI/',
             type: 'GET',
             dataType: 'json',
             success: function (data) {
 
-                WriteResponse(data);
+                WriteClientList(data);
+            }
+        });
+
+        $("#ViewClient").hide();
+        $("#mainBlock").show();
+        $("#AddClientButton").show();
+
+    }
+
+    function OrderList() {
+        $("#mainBlock").html("");
+    }
+
+    function ViewClient(el) {
+        // получаем id редактируемого объекта
+        var id = $(el).attr('data-item');
+
+        $.ajax({
+            url: '/api/ClientAPI/' + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                var str = "<div><div class='dl-horizontal'><h4>Детализация по клиенту</h4>" +
+                    "<table class='table-condensed'>" +
+                    "<tr><td class='control-label col-md-2'>ID Клиента</td><td class='col-md-10'>" + data.idClient + "</td></tr>" +
+                    "<tr><td class='control-label col-md-2'>Имя клиента</td><td class='col-md-10'>" + data.clientName + "</td></tr>" +
+                    "<tr><td class='control-label col-md-2'>Номер телефона</td><td class='col-md-10'>" + data.clientPhone + "</td></tr>" +
+                    "</table></div><p></p><a onclick='ClientList();' class='btn btn-default'>Назад</a></div>"
+                $("#mainBlock").html(str);
             }
         });
     }
 
-    function WriteResponse(clients) {
-        var strResult = "<table class='table'><tr><th>Имя клиента</th><th>Телефон</th><th></th></tr>";
-        $.each(clients, function (index, client) {
-            strResult += "<tr><td>" + client.clientName + "</td><td>" + client.clientPhone + "</td><td>"+
+    function ViewService(el) {
+        // получаем id редактируемого объекта
+        var id = $(el).attr('data-item');
 
-                "<a data-item='" + client.idClient + "' onclick='ViewItem(this);'>Детализация</a> | " +
-                "<a data-item='" + client.idClient + "' onclick='EditItem(this);'>Изменение</a> | " +
-                "<a data-item='" + client.idClient + "' onclick='DeleteItem(this);'>Удаление</a> </td> </tr>"
+        $.ajax({
+            url: '/api/ServiceTypeAPI/' + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                var str = "<div><div class='dl-horizontal'><h4>Детализация услуги</h4>" +
+                    "<table class='table-condensed'>" +
+                    "<tr><td class='control-label col-md-2'>Название</td><td class='col-md-10'>" + data.nameService + "</td></tr>" +
+                    "<tr><td class='control-label col-md-2'>Цена</td><td class='col-md-10'>" + data.priceService + "</td></tr>" +
+                     "</table></div><p></p><a onclick='ServiceList();' class='btn btn-default'>Назад</a></div>"
+                $("#mainBlock").html(str);
+            }
+        });
+    }
+
+
+    function WriteClientList(clients) {
+        var strResult = "<div><a class='btn btn-default' id='AddClientButton' onclick='AddOrder();'>Добавить Клиента</a></div>" +
+            "<p></p> <table class='table'><tr><th>ID клиента</th><th>Имя клиента</th><th>Телефон</th><th></th></tr>";
+        $.each(clients, function (index, client) {
+            strResult += "<tr><td>" + client.idClient + "</td><td>" + client.clientName + "</td><td>" + client.clientPhone + "</td><td>"+
+
+                "<a data-item='" + client.idClient + "' onclick='ViewClient(this);'>Детализация</a> | " +
+                "<a data-item='" + client.idClient + "' onclick='EditClient(this);'>Изменение</a> | " +
+                "<a data-item='" + client.idClient + "' onclick='DeleteClient(this);'>Удаление</a> </td> </tr>"
                 ;
         });
         strResult += "</table>";
-        $("#tableBlock").html(strResult);
+        $("#mainBlock").html(strResult);
 
     }
 
+    function ServiceList() {
+        $("#mainBlock").html("");
+        $.ajax({
+            url: '/api/ServiceTypeAPI/',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+
+                WriteServiceList(data);
+            }
+        });
+    }
+
+    function WriteServiceList(services) {
+        var strResult = "<div><a class='btn btn-default' id='AddServiceButton' onclick='AddService();'>Добавить услугу</a></div><p></p><table class='table'><tr><th>Название</th><th>Цена</th><th></th></tr>";
+        $.each(services, function (index, service) {
+            strResult += "<tr><td>" + service.nameService + "</td><td>" + service.priceService + "</td><td>" +
+
+                "<a data-item='" + service.nameService + "' onclick='ViewService(this);'>Детализация</a> | " +
+                "<a data-item='" + service.nameService + "' onclick='EditService(this);'>Изменение</a> | " +
+                "<a data-item='" + service.nameService + "' onclick='DeleteService(this);'>Удаление</a> </td> </tr>"
+                ;
+        });
+        strResult += "</table>";
+        $("#mainBlock").html(strResult);
+
+    }
+
+
+
 </script>
 
-<h2>Работа с API</h2>
-<div class="form-group">
-    <a class="btn btn-default" id="AddButton" onclick='AddCall();'>Добавить отзыв</a>
+
+<div>
+    <h2>Работа с API</h2>
+    <div class="form-group">
+        <a class="btn btn-default" id="ViewOrdersButton" onclick='OrederList();'>Заказы</a>
+
+        <a class="btn btn-default" id="ViewClientsButton" onclick='ClientList();'>Клиенты</a>
+
+        <a class="btn btn-default" id="ViewSeviceButton" onclick='ServiceList();'>Услуги</a>
+    </div>
+    <hr />
 </div>
-<div id="tableBlock"></div>
+<div id="testBlock"></div>
+<div id="mainBlock"></div>
+
+

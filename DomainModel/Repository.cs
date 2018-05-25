@@ -40,23 +40,6 @@ namespace DomainModel
 
         public virtual void Delete(T entity)
         {
-
-            //if (entity is Client)
-            ////{
-            ////    using (DataContext dc = new DataContext())
-            ////    {
-            ////        Client cl = new Client();
-
-
-            ////        var orders = dc.orders.Where(item => item.idClient == ((Client)entity).idClient).ToList();
-            ////       // foreach(var p in orders)
-
-
-            ////    }
-
-            ////}
-
-
             _entities.Set<T>().Remove(entity);
         }
 

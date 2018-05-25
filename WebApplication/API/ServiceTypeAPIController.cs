@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,16 +11,19 @@ namespace WebApplication.API
     public class ServiceTypeAPIController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<ServiceType> Get()
         {
-
-            return new string[] { "value1", "value2" };
+            IGenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
+            List<ServiceType> ListST = RepST.GetAll().ToList();
+            return ListST;
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public ServiceType Get(string id)
         {
-            return "value";
+            IGenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
+            ServiceType service = RepST.FindBy(item => item.nameService == id).FirstOrDefault();
+            return service;
         }
 
         // POST api/<controller>

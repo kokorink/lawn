@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using DomainModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -21,11 +22,13 @@ namespace DomainModelTests
             RepС.Save();
             Order testOrder = new Order(testServiceType.nameService, 80) {lawnAdress = "GetAllAdress", idClient = testClient.idClient};
             GenericRepository<Order> RepO = new GenericRepository<Order>();
+            int startOrderCount = RepO.GetAll().Count();
             RepO.Add(testOrder);
             RepO.Save();
-
-            int findByOrderCount = RepO.FindBy(item => item.lawnAdress == "GetAllAdress").Count();
-            Assert.AreEqual(findByOrderCount, 1);
+            var test = RepO.GetAll();
+            int getAllOrderCount = test.Count();
+            Assert.AreEqual(getAllOrderCount, startOrderCount + 1);
+            Assert.IsInstanceOfType(test, typeof(DbSet<Order>));
             RepO.Delete(testOrder);
             RepO.Save();
             RepС.Delete(testClient);

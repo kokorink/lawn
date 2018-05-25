@@ -19,26 +19,4 @@ namespace DomainModel
         }
      
     }
-
-
-    public class SampleInitializer
-        : DropCreateDatabaseIfModelChanges<DataContext>
-    {
-        protected override void Seed(DataContext context)
-        {
-            List<ServiceType> serviceTypes = new List<ServiceType>
-            {
-                new ServiceType { nameService = "Полив", priceService = 100 },
-                new ServiceType { nameService = "Стрижка", priceService = 200 },
-                new ServiceType { nameService = "Комплекс", priceService = 280 }
-            };
-
-            foreach (ServiceType serviceType in serviceTypes)
-                context.serviceTypes.Add(serviceType);
-
-            context.SaveChanges();
-            base.Seed(context);
-        }
-    }
-
 }
