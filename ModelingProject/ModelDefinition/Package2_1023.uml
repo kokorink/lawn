@@ -1,0 +1,1587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="eaf6cb63-fe3f-431f-a2db-a19bec767e00"
+  name="DomainModelTests"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="58aeedb9-8242-4a9f-9f5f-780662e82161"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDomainModelTests"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="a5100119-0b01-4f4c-8028-1ede904ec58a"
+        name="ClientRepositoryTests"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="41636777-079d-4d37-8f41-9374fa3036bc"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9fb57f67-b5f4-43b7-96d2-bd142227e1d7"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="693fb4af-98fb-427f-a578-4dc2d035455f">
+                <propertyInstance
+                  Id="ef52f1ad-472d-4a11-8006-741c01205eae"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f1cad77e-dc5f-4296-a23c-83534d2af739">
+                <propertyInstance
+                  Id="267f961c-9b3f-4268-997d-0020b230b216"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3cac8463-3bd9-414e-a6b4-60e8785e8ee9">
+                <propertyInstance
+                  Id="87a68277-cfdf-42dc-bb43-26e1d513b622"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aaa0ac13-ed71-4d28-99c1-0c71d24c78da">
+                <propertyInstance
+                  Id="b7de6733-0e8a-448d-9fb3-0659e93897f9"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cbb88596-bb43-4475-872b-2a5ce4ce6a7e">
+                <propertyInstance
+                  Id="c31c249e-a4e2-4842-a178-4f4b00ca5411"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="22645d28-de39-40a4-8ad9-33dd2d7c4502">
+            <classMoniker
+              Id="3db4e94d-3a38-4333-ad78-6485e889c780"
+              LastKnownName="GenericRepository"
+              LastKnownLocation="Package_1022.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cd4c2450-d47e-46d9-bfbf-66370867de6c"
+            name="GetAllTestClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="31e2be01-1412-425b-be56-2dbb0ec33f8c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests Member%3DGetAllTestClient"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f38b22d4-5534-40fc-90aa-d0493ee36f9a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1020ce7d-b418-4b00-88c4-c0c94c9e561a">
+                    <propertyInstance
+                      Id="81a29e43-30be-4922-8468-f3b0b4f66062"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c38d1d0e-b03f-4ff4-bc05-bdd41af55171">
+                    <propertyInstance
+                      Id="ebb592bf-d7ec-4d79-b4a4-7cc84dd4f402"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71846d3e-22ee-4c62-8d6e-7c55a11fd4e2">
+                    <propertyInstance
+                      Id="b287f07f-09ab-4f85-a61b-2cf507ae7d6f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a3668e0-9944-4e4e-bf79-e5e75091e2fa">
+                    <propertyInstance
+                      Id="549b0e7c-e130-43fc-8600-632a1fa290be"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6175898-175d-4009-aacc-10ebe242d6d3">
+                    <propertyInstance
+                      Id="501891f5-2239-4e34-8624-4fbe4bd5dfd1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="367c0bd6-7a6d-4181-99db-5833d5247d0e">
+                    <propertyInstance
+                      Id="ad9dc97c-74b0-48ab-b73f-cc9f991ae486"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="097aa5b0-26a5-45fd-9093-d296bad8f993"
+            name="FindByTestClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="74a66084-cd31-49a1-90a0-5aee9ea259fc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests Member%3DFindByTestClient"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="82ac7c3e-3741-4239-8d6e-3c96d01d397b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52f782ad-5a3a-4cb4-b0cb-18c71a174f63">
+                    <propertyInstance
+                      Id="e4d753cc-09b5-4e47-a512-5da78ed1c1d1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef475e66-93fd-46ba-a8af-dd45344fc232">
+                    <propertyInstance
+                      Id="14da118e-e911-4dd5-9c23-5bb6a2bd2bb6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75c35019-c718-444c-a328-ab548b4bc1e7">
+                    <propertyInstance
+                      Id="2c3900fe-626c-449b-b4b7-03bd8c65af0b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d7564b8a-8d6e-4bb5-abff-fe8413bd7673">
+                    <propertyInstance
+                      Id="41e0ab98-fd89-41aa-ae67-d06d1c4fee9b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5610e6f6-0429-47e0-a126-eba91ba5e6a3">
+                    <propertyInstance
+                      Id="f8a5cd17-fb8c-43c2-8896-040e62ec17fc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c3c5955-4d71-46db-ba45-3b3150b79905">
+                    <propertyInstance
+                      Id="959d0a5b-00bd-42ea-bc1d-9a1b582397d9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="58b01615-e4a8-415b-804d-a6c71f13ca3f"
+            name="AddTestClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="091da51b-8f77-4b6d-95b4-4fc63d3cb4a1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests Member%3DAddTestClient"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d7b883a7-2e53-40ae-8043-67e1b8a65329"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11a05c45-477f-4e52-ba9a-2e396d3249f2">
+                    <propertyInstance
+                      Id="afcf25b9-4186-44bc-be33-66706422b5fa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e972bf1c-934d-4a70-962e-be8a88d6a8d9">
+                    <propertyInstance
+                      Id="28a9d5eb-bceb-41e2-8320-d38fdad844fb"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2550eeb-3c1d-4755-b16d-59ddebf4d2e8">
+                    <propertyInstance
+                      Id="dbcfb578-b4ec-4b7d-ab89-e4d8a23df073"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b0c3494-b19a-42c6-bd1d-6358896076b0">
+                    <propertyInstance
+                      Id="2cad9182-54a0-4e36-90f8-cf4fa25cac18"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac9e79bc-69eb-4360-b39f-6b8467746ebc">
+                    <propertyInstance
+                      Id="5995c499-5552-4ab3-a755-3e69269d3402"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89d23d36-32fb-4143-a51c-ce4530afa9bb">
+                    <propertyInstance
+                      Id="a70af33d-1a42-47f6-b700-392e20d07322"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="ab80075b-faa2-4115-bc42-0a702c269c9b"
+            name="DeleteTestClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="222f6e9c-ff94-41e8-8543-90f3b3133992"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests Member%3DDeleteTestClient"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5c613b51-e0dd-48ca-bc46-a7c98491b0b4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0cef7c21-6bb0-4f0c-9ed4-d271789da2f2">
+                    <propertyInstance
+                      Id="4510b4f1-8b66-43ab-bc74-03ca02f3813c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="065a76f3-4d17-44b3-af48-8b547a11de82">
+                    <propertyInstance
+                      Id="33069c90-6022-4d52-860c-375511a8c024"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96a32cfd-6584-4d8e-8dbe-a8f0446d123d">
+                    <propertyInstance
+                      Id="46226fc1-855a-4eda-9bba-2f6b8615e9bf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9e49e0f-9267-4cbc-8bf0-0db6851865da">
+                    <propertyInstance
+                      Id="3d6037d6-d0fc-4dc9-b551-49866653c25f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91585ca3-13f2-429e-b8f5-ff30bfd5dad0">
+                    <propertyInstance
+                      Id="532b4ff1-4115-46cf-bd25-42b283401964"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ec80cff-fd54-4c95-880b-366bb3dbdd36">
+                    <propertyInstance
+                      Id="8ba02f57-e0eb-4bdc-aca1-e2c11afbfdb2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="549f91e8-fa69-4d87-a3ee-ac59ad1ddb93"
+            name="EditTestClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="05c00cda-f556-4898-8e94-df58d704ed79"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests Member%3DEditTestClient"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1b2a3f6c-fcef-48ae-a297-d19ba79c49c4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="de267a1b-c0a8-4378-bce1-fb153d9ef7ff">
+                    <propertyInstance
+                      Id="200d3ecc-4faf-4090-bdbd-2c59fbe2d6c4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bcd7c56a-c013-44f2-8c94-04b52f750723">
+                    <propertyInstance
+                      Id="951f678e-94aa-4214-b86d-5ed639e22b1f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23b158cc-9ba2-48fe-85ec-99ff070bb65c">
+                    <propertyInstance
+                      Id="727c231e-a7ac-4bc5-97b6-c49ce73b52cd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bb8bb70-0497-4251-93e6-b6faa3072ac5">
+                    <propertyInstance
+                      Id="c997089d-1d11-4724-b576-3d6e716405e2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a01c1c7d-91f7-466b-abc9-10e66d18e18f">
+                    <propertyInstance
+                      Id="efc2b53e-23f0-480f-88b9-677c10f1991c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e06cdb1a-f562-4e8d-acaa-cc8f28a1051e">
+                    <propertyInstance
+                      Id="3075c0b1-1563-4646-8bc4-c9b73e8dca3a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="d40778c4-e9f3-4df8-91ce-f5e8e6bad3f5"
+            name="SaveTestClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ba2cad45-45eb-45bf-9dcf-66b503f4b7b5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests Member%3DSaveTestClient"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dbecd000-acfa-4430-b19c-6ed000a6512e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b57345d-fa44-42bd-b2d1-d638813cb285">
+                    <propertyInstance
+                      Id="7ff942b9-bbc3-4acf-abcd-811c101ec932"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9f501c7-ef1f-4aaf-81e5-0eef522de99d">
+                    <propertyInstance
+                      Id="3f566305-963c-4caf-895f-4bde1951cfeb"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5ebd147-7eba-4325-85b4-d466be2e735c">
+                    <propertyInstance
+                      Id="34167563-3058-456a-b891-9115a1f5ce9a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bcfabbf-84a1-4867-8b27-5a026423d54e">
+                    <propertyInstance
+                      Id="e3ea21b3-e819-4caa-98b4-c9d2f2b28dcb"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1dfd2101-3d6a-46e7-8145-359378f62fd9">
+                    <propertyInstance
+                      Id="ea42455b-65d2-4ad0-8d46-ae015f84b124"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="775edc49-cf42-47ca-b120-a98da772b4a9">
+                    <propertyInstance
+                      Id="1fd27114-fb3f-46a6-9a9d-89c749ab37fa"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="aa1e367f-265e-49b5-b3e0-2ba4f38dfd52"
+            name="ClientRepositoryTests"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="dbdf1b90-f42f-4f9b-9b3a-e5a40f16c11e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DClientRepositoryTests Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="aeaa600e-1886-48b0-9687-fa88633fbffb"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1433f3af-fc2a-4cd4-bf41-a4a64553ca5c">
+                    <propertyInstance
+                      Id="602afa6a-7eca-402c-92cb-8c2a66c3e232"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e7d1ee0-f85c-46e1-94c0-6baa90394a42">
+                    <propertyInstance
+                      Id="a3ba92df-894b-42dc-b2e1-3695aad2b17f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b90e17d9-6db1-4a32-8ef9-8a1e4abea478">
+                    <propertyInstance
+                      Id="03eaabb3-d4e8-4008-adf1-5bfad3e1ea65"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b53e9a8-88c3-4070-8e5c-9a8c65d4d082">
+                    <propertyInstance
+                      Id="2c311823-d9f1-4109-bd32-c2a95efe50ff"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aaf3a534-7b6a-4e9f-9e85-020a676b0c2d">
+                    <propertyInstance
+                      Id="dc2c4ee7-ce74-43ae-967f-b1c4725b72bd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="326ea710-9499-4fc8-b527-66f869ca13db">
+                    <propertyInstance
+                      Id="3cb69597-bfb5-4517-8472-35933e861049"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d1fd42c3-a5fc-4155-8c1e-94bfa06b1241"
+        name="OrderRepositoryTests"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5b77552f-0005-42a5-98e5-3f2ca002a1d4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7ae4d5a4-57e3-418a-aa35-5e8ebdce1b61"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="afa4907a-90a4-4c51-9d97-fcfdb9c28f66">
+                <propertyInstance
+                  Id="2e43fad1-d7ca-4961-b22c-ef016ec838c3"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="40380024-3e10-45ab-b584-2e908cb42d9a">
+                <propertyInstance
+                  Id="0a9fa167-02cf-40d1-a259-2632be3c4b81"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0d520362-d2ee-4d53-acb9-66a194cea935">
+                <propertyInstance
+                  Id="e9244ce4-a070-4e87-9e1a-9a754dafbacd"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b9c1973e-89c5-45a2-8926-b24970e0d6f3">
+                <propertyInstance
+                  Id="aec7ddc3-a461-4e51-a0d1-1a88ee042e3b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d20a32dc-a047-4dc8-b043-5c7b9aa53d1f">
+                <propertyInstance
+                  Id="50db545b-f79c-4f2b-9e65-7d089e8932cd"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="b145aa09-7cda-454f-ad9d-59a1afdaa67a">
+            <classMoniker
+              Id="3db4e94d-3a38-4333-ad78-6485e889c780"
+              LastKnownName="GenericRepository"
+              LastKnownLocation="Package_1022.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c343805a-dc79-4bf1-8297-6610dd505a0e"
+            name="GetAllTestOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d90116f0-b892-4464-be51-e386dd8ad71c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests Member%3DGetAllTestOrder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a8ab7b46-727d-484f-af0f-44dc05cbd9a4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="071c9225-d976-42dc-be27-9d75443a0d49">
+                    <propertyInstance
+                      Id="8144f196-bde8-464a-9c06-463142579efd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06926e99-2796-4926-8794-5a13692dd320">
+                    <propertyInstance
+                      Id="e0a22a3c-1399-4796-a38d-25cce4fd1988"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1d3d024-ae4b-4495-95a8-51a1ad722645">
+                    <propertyInstance
+                      Id="c125750f-37bb-4020-a875-00e714e12221"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77b1779b-6d5e-4b33-8b36-bcf8b6e84222">
+                    <propertyInstance
+                      Id="b5cac8e7-be68-4231-9ef4-0a0e653cee28"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ef5cece-540f-49fe-afe6-5cbd6cfccc7c">
+                    <propertyInstance
+                      Id="087b9803-e8af-47be-be5c-b7680775e4c8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b4be65a-4a19-4f2d-af2e-5ab391168d04">
+                    <propertyInstance
+                      Id="33e3ecaa-8e97-4bd8-971d-090f2202aa01"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="ef7128a2-ab64-4523-b16c-b9f6034c659e"
+            name="FindByTestOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f3a30fb5-dda5-4027-a6e2-38853485c03c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests Member%3DFindByTestOrder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0c961126-4b2d-4b89-8d7d-1eb0ba1f5104"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5b0aade-a60c-41c3-a6e4-ecc38c8e8a37">
+                    <propertyInstance
+                      Id="130ba98c-58dd-447a-8a03-b4443efd99cd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e35d72d3-d469-4b9d-9540-9b2f80998c17">
+                    <propertyInstance
+                      Id="d41cb94e-3f69-4778-97d9-392413fb3d20"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c62a87ee-f49b-4560-a4e8-ee26708c88c7">
+                    <propertyInstance
+                      Id="5c7c81a9-e5d4-4a5e-98ae-7e5daa8a0bd5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94eda55e-55fa-434e-b49f-982d3629853c">
+                    <propertyInstance
+                      Id="38abac47-1495-4e57-a9f0-1ab654feb115"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2c63ad6-9a07-463b-a843-7584fe236542">
+                    <propertyInstance
+                      Id="4f6b492c-604a-49a7-9b25-95331a8cc722"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1a4ac05-910b-4b01-a46a-37cb015b1ec2">
+                    <propertyInstance
+                      Id="bb6ae609-2ba8-4b4a-9e53-4048e4dea3d5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="20b97986-9542-4b12-8e91-7644a0b25b6e"
+            name="AddTestOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3a4da3ba-fffd-4594-b73a-3711ca952bee"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests Member%3DAddTestOrder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3b01a243-1f41-4c80-ae67-f58974bcc437"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e00ef531-1ff1-4947-8a16-79e11ba409a8">
+                    <propertyInstance
+                      Id="bb5b69d4-6e95-4b2e-9733-280e632858f9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba96d962-c597-48e6-8445-f3501c87a319">
+                    <propertyInstance
+                      Id="3d233d80-866d-4393-b812-5242cb34c946"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1728b303-73c8-4781-bc6d-6fc777e00647">
+                    <propertyInstance
+                      Id="fc05faac-1bd0-4551-a105-e0848bbfbaa5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e675e0fb-931e-42e6-810a-00d8d782f48e">
+                    <propertyInstance
+                      Id="4fbfaf4e-56ec-41f0-b90b-ed442461e561"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="101bfbd2-cad8-4f02-96f4-9a717d8c9a06">
+                    <propertyInstance
+                      Id="a3f9d571-eb48-4d4e-b8a5-853ccf7ddfa6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9165e97-4911-47e0-8839-0ced0f2b59bd">
+                    <propertyInstance
+                      Id="b30292e1-a17c-481f-9e46-3480f227f8e3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f0fce040-e1f6-41ab-8847-95fbffef7e07"
+            name="DeleteTestOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="365533e1-f2bb-40a4-ad6c-df730d6dfc5d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests Member%3DDeleteTestOrder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5b17d708-1412-461a-99c7-3664c279618d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="297313eb-7451-4df1-868d-b71856606b20">
+                    <propertyInstance
+                      Id="6c4a9f65-8c63-448c-8c81-a481f777c75b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72f3a597-3951-4950-88e8-71adeac30f9a">
+                    <propertyInstance
+                      Id="bb694f78-01f5-4cf8-bf40-ed633a38913e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e031803-2a50-45a5-9f8b-04df58c7f34b">
+                    <propertyInstance
+                      Id="684b41d3-f9b0-4e29-92b4-b6923c6fd928"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da2da66d-348a-419d-a555-b008d5ab01c1">
+                    <propertyInstance
+                      Id="66b0a6ba-9df6-4a61-ae01-d75e367aa373"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8030314c-a5c6-46e7-a729-c2286c06c33d">
+                    <propertyInstance
+                      Id="51b361f9-44c1-4857-989e-5d74aae3b18a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8449e385-2ce7-4b1e-840b-59093a3ef9de">
+                    <propertyInstance
+                      Id="e1570074-c9ff-4ec3-a9b2-3e5b487f1a92"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="d09b7b77-a95c-443b-8f4a-431b318693a6"
+            name="EditTestOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="276e8ffe-f927-4ad7-be20-77d91f2168ad"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests Member%3DEditTestOrder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="28f56d3c-8e23-4def-9075-45c88eeee115"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd9121fb-9247-4536-ad70-61129c954626">
+                    <propertyInstance
+                      Id="9895c6cd-f8f1-426a-a160-b2267855dd60"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce4b7d51-cb1e-4ced-b59e-c1f5f6e6d8b4">
+                    <propertyInstance
+                      Id="00507cff-73a4-42bb-bcd2-dee56d8cd0d1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1d607d0-01ba-49ca-b86c-e7c5979a2838">
+                    <propertyInstance
+                      Id="b5757902-a6e2-454b-845b-0069d4677fac"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2842a79-42b1-4d7d-8aab-1b37f74d52d4">
+                    <propertyInstance
+                      Id="e457ab93-39a2-4c62-b149-3a29700172bd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a5931d8-7493-4945-ac48-5a7d9ba3d4d6">
+                    <propertyInstance
+                      Id="a7469611-ecd4-48e0-834b-1f7ea6843de3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92132dc0-16a5-4d34-b442-9970afa55bad">
+                    <propertyInstance
+                      Id="9d6f86eb-6a73-4ac4-9767-656531a7283c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="1c258b17-9b5a-4e3a-86c2-37166dd252e0"
+            name="SaveTestOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d8233616-3e1e-48fd-9b8d-35fe8ff7cd55"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests Member%3DSaveTestOrder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0d7d79b6-8260-4916-b29e-351ea27d25e5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30b1edcc-9ae1-4813-9a2e-75f14d8c3b4f">
+                    <propertyInstance
+                      Id="630686f8-7a0c-4ea8-866d-59aa5ca01bea"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96023c9b-54c7-4921-a92c-bd02732bc25f">
+                    <propertyInstance
+                      Id="53feb2d3-355c-4c6a-96d3-6a59eeb296b8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14ac1b23-b12d-424a-b283-e6574498606a">
+                    <propertyInstance
+                      Id="bdcf0a9a-1aa3-4c20-ab94-0ef573824933"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4eaa0f45-77a0-46b3-9eb1-b55fcaf825c3">
+                    <propertyInstance
+                      Id="c262b0d5-7e73-4011-8775-ff90e49e011c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9aa07976-e565-4a2d-981f-70c4beb268dc">
+                    <propertyInstance
+                      Id="7328f178-36c5-4d13-a758-0aa8c6404f92"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d3eb7e1-64ec-495d-8581-64f13e612879">
+                    <propertyInstance
+                      Id="3da07bb0-013c-45de-9317-17b52f0de0e6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8d6807bc-e064-4720-8a4b-2889e41e97ed"
+            name="OrderRepositoryTests"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2182f4e3-c648-4587-8cc6-48e6c9f543af"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DOrderRepositoryTests Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="976b0fa8-cc31-4ea7-8bd5-1c03e2c13788"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cde011c-f507-4c0a-88a2-61211034c5df">
+                    <propertyInstance
+                      Id="43ecd0ba-e68f-49d5-8b67-78ea00d9b186"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3eb83934-5a42-4a48-b21b-13f883b8ad83">
+                    <propertyInstance
+                      Id="e8d4c64e-0d4f-4bf3-ac0f-5d34e125c29b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c96ed858-38ce-41d4-84f7-6738a0558010">
+                    <propertyInstance
+                      Id="61f56b5a-1a02-4400-9388-907966358d4b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="55647862-0208-46a5-9fda-f181fa3f3d96">
+                    <propertyInstance
+                      Id="c67682c6-0d19-46a3-8902-b0e039161b13"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c599422-abbe-41f6-ba6a-c41f3f1aa3d0">
+                    <propertyInstance
+                      Id="45d6206b-259b-48c3-b09a-a09d9161947e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="532c9a4f-0aad-446c-9030-1e06166cbe2b">
+                    <propertyInstance
+                      Id="ee4b4008-c152-444c-9311-3765ffd558c9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6b1116b6-0bce-4290-bcf5-7dde22c957d2"
+        name="ServiceTypeRepositoryTests"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a82ada25-06c6-4b3e-af1d-90fe9992ef4e"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f58c3832-0780-41e9-9eeb-5584e810b99b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a8f3a350-e589-4f46-a20e-ae98089ee2c6">
+                <propertyInstance
+                  Id="38897596-49cf-4ec7-b552-1f29c5b23484"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="646b7244-cadd-4b46-948d-8faedff2a488">
+                <propertyInstance
+                  Id="94e51fa2-75bb-4894-8026-287fb84b1f78"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="17cea2b7-e073-472e-8ea2-bee8dc434245">
+                <propertyInstance
+                  Id="64453b7f-5435-416e-8bef-2ddb3972917a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c448b26-0a13-4fad-adb2-a410e7e55ba6">
+                <propertyInstance
+                  Id="76f347dc-dae8-45c6-b50e-6701801634f7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="73cc149c-d679-465a-a57a-375ba23a4fd3">
+                <propertyInstance
+                  Id="b21bd49d-5bac-485c-babc-23045b58556c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="0ff31da4-0b1a-444f-b652-649b6ffb64d5">
+            <classMoniker
+              Id="3db4e94d-3a38-4333-ad78-6485e889c780"
+              LastKnownName="GenericRepository"
+              LastKnownLocation="Package_1022.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="872787a0-5d9a-4ab9-8d20-a15d48704954"
+            name="GetAllTestServiceType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e7e34f68-4a9e-482b-9cf8-8325058c8806"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests Member%3DGetAllTestServiceType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="41a0a5fd-d750-4cc1-9ba9-f6556339db41"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4be1b204-31b3-4dc6-b535-e8b2abb8fe54">
+                    <propertyInstance
+                      Id="4e9517a8-ddf3-41ca-82c9-ad70f7284431"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="770c40ba-ac84-4848-9327-b9eeaf50618b">
+                    <propertyInstance
+                      Id="d1f85709-ce22-4760-8dab-c47043c3b42a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf0ba20b-8c3c-41ec-907f-7e682fc3a404">
+                    <propertyInstance
+                      Id="9083fd3a-e361-4f2c-85ee-5f9187d737c2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50d55f1d-8e67-49a5-a83b-7f29d190d568">
+                    <propertyInstance
+                      Id="091fdd0d-7f14-421e-a045-a39ed116bf0b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="36f0c279-ad1a-4016-b62a-2b1b70ebfade">
+                    <propertyInstance
+                      Id="ce873164-d331-4860-8ebb-37f0cbf5a963"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cffd8c64-4ada-41ee-8a07-98392e5b5002">
+                    <propertyInstance
+                      Id="2b234461-0f6b-4eed-aadf-168b576d1954"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="3c3a88c8-7ad0-4f62-9853-932cebcfb902"
+            name="FindByTestServiceType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b6541eb8-ccff-4d12-acdd-c9616a5d2d2c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests Member%3DFindByTestServiceType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fff407ac-b6d1-49e3-ad97-06daad0f190c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d7a6d84a-30ef-42ed-8776-b4b78dc1387d">
+                    <propertyInstance
+                      Id="7c6df283-10f5-4dc6-91eb-0bbb0fa49df9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e073b8b-dbdc-4a16-89b8-075216e61ffd">
+                    <propertyInstance
+                      Id="f6131d4b-a62d-4a7c-a18a-5543a3a6e520"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6afa2371-824c-4d5f-b47b-a15a852129fc">
+                    <propertyInstance
+                      Id="6e996d03-04dc-47cf-ba79-e06627b21d8c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dddab76b-9ace-48c1-a081-0f78385a9e5f">
+                    <propertyInstance
+                      Id="b1ca2b3d-ffbd-4371-bada-f7196d1b1720"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d1a001c5-b330-4111-8583-fc0512ca3462">
+                    <propertyInstance
+                      Id="895a20d7-37f3-4382-862f-d148bc6f80bc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6482681c-038b-475c-81a6-07bbf6d94142">
+                    <propertyInstance
+                      Id="d8a141e6-a338-449d-8c86-26e200600597"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="b84c7416-0052-460c-b75f-9bc75b283122"
+            name="AddTestServiceType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="27133294-ce56-4c8f-997b-72347e55abd2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests Member%3DAddTestServiceType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="04c30b42-c23a-4bc6-94ba-4aabd23b447c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43be16f1-725f-4e52-ab21-7c3f93128759">
+                    <propertyInstance
+                      Id="e7effca8-e57a-43a3-bd4a-c2647d4348de"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="675fc1d2-7836-4164-86ed-043050a634af">
+                    <propertyInstance
+                      Id="e017ec00-fc80-49a8-8139-8a626bb4a4e1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84e45e88-9285-4fb4-b58f-e27603a9b3c0">
+                    <propertyInstance
+                      Id="c186e2a0-8c9f-4a33-95c1-aa8c8b837ac9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc285c2b-5190-40de-ab84-a6bd25c8912b">
+                    <propertyInstance
+                      Id="7eef635c-4cea-4d6e-92de-06ab05f537ad"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87860538-05d9-48d4-a452-c15ff8985bc1">
+                    <propertyInstance
+                      Id="3961ce9e-de27-4884-88d8-3da97992b1f9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9c322c6-78e8-445f-92f3-73d0bf3df53e">
+                    <propertyInstance
+                      Id="137ab01f-d0a8-4f2e-b20a-cbadfdb3f089"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="cea46d4f-82cd-41e9-9487-31188561e7dd"
+            name="DeleteTestServiceType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="114afe87-8bcc-4260-90b8-1fb249d0cc78"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests Member%3DDeleteTestServiceType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3fb4c88f-6a3b-416f-a513-54e9ac02b1c9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="764dbbe7-1d66-4d5a-8275-84daaabb7692">
+                    <propertyInstance
+                      Id="7e4c7e1a-49e8-4d38-b69c-f3c6d820205f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="63587374-024f-492d-89d6-4fd9a48451b7">
+                    <propertyInstance
+                      Id="73c6936c-218e-4fcd-90f1-9cfc904addf2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e45c6ee4-304e-4eec-8194-80c3e49110c8">
+                    <propertyInstance
+                      Id="79dc3362-e916-4056-94f9-08e65cfd55aa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7a785b8-737c-447a-8824-784fb4e2b566">
+                    <propertyInstance
+                      Id="02aa7f21-e705-470c-a5f2-faac5b819661"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89cc46ff-b3bf-459f-ad4e-435ac4f0d092">
+                    <propertyInstance
+                      Id="63816daf-5c88-4f53-a885-83c2d4f42a4d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50ef3247-bd62-488e-b35e-f67663ec99fa">
+                    <propertyInstance
+                      Id="ff87eb78-b995-4478-b484-0612ec020136"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="15b22a77-033f-4691-943d-400e36d583eb"
+            name="EditTestServiceType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="17adb683-2554-46e9-86bb-c8876d91af41"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests Member%3DEditTestServiceType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6358b60b-d436-48c9-918b-6f531f156baf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e743dc76-3b8d-40d3-9cf6-ba172429a3bc">
+                    <propertyInstance
+                      Id="09749750-5336-465b-99b5-f257dcccbb30"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="846a32ab-1b88-435a-9d71-c6e7d9100699">
+                    <propertyInstance
+                      Id="7c6a417f-fb62-4707-bab3-f2a9c91a451c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91ba5d4a-6e86-4afc-8d97-46561d9e0b40">
+                    <propertyInstance
+                      Id="6aa5b5bb-608b-482d-a80a-f678534ae188"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1db8043b-fb3c-42d9-b732-0b8450d12216">
+                    <propertyInstance
+                      Id="25cea512-c104-4357-ad97-9542859e9f0b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6bc909b3-a25b-4c69-bdce-bc1f024d60bf">
+                    <propertyInstance
+                      Id="f3cd0094-ce38-4845-9033-ed37f30d9aab"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf85ede0-2117-4482-9cd0-07e1bd4e6ddf">
+                    <propertyInstance
+                      Id="c933e560-c80b-4f52-b5f8-4715e65e165c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="6da222fd-5d52-4851-9763-033fa8967c8b"
+            name="SaveTestServiceType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="14aef447-1602-4341-b8f9-2ca2f0d857c2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests Member%3DSaveTestServiceType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="377643e1-b27c-4ceb-ae10-8169bc2c651b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7581c5a3-e3f4-4bb8-81f4-faa71f584fb4">
+                    <propertyInstance
+                      Id="d0028cdf-20b3-455a-a5ea-5ffae78d8ccd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df27c39d-7b41-4e98-a3e4-47b82173bd80">
+                    <propertyInstance
+                      Id="94a12b22-5b98-4693-b6e9-34d7604d1ac5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4368219-9035-4b0e-8df3-b96f33b14eeb">
+                    <propertyInstance
+                      Id="9af4c654-f436-4347-9f22-9a1f7d86fb88"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ff6dd96-290c-4991-bb16-ca9f5ab8cbf9">
+                    <propertyInstance
+                      Id="c89e9055-4a52-458a-8bc4-096fafca2712"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2a181e0-65d5-4664-a99d-33918ebe7840">
+                    <propertyInstance
+                      Id="69bef896-923e-45d9-915c-53ded6414369"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9095e2d3-ddfb-447f-aa7a-ffbdefa1998d">
+                    <propertyInstance
+                      Id="3f2517ef-6b34-4c9d-8526-5d8966521de2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="37312943-65fb-4434-bdcf-ff455860b2be"
+            name="ServiceTypeRepositoryTests"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="90773197-2a0b-4a51-82b3-77e1ddbd195b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FStudy%2FМиС%2Flawn%2Flawn%2FDomainModelTests%2Fbin%2FDebug%2FDomainModelTests.dll Namespace%3DDomainModelTests Type%3DServiceTypeRepositoryTests Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="81023693-337a-4334-8001-2a72cddaa187"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bedc1838-5805-44d6-9f64-d32743078bca">
+                    <propertyInstance
+                      Id="d2af5350-af4a-4bbc-a7b1-10807bec5348"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca515e6f-ad3d-4c6b-90f9-45dc7c4b575b">
+                    <propertyInstance
+                      Id="23f96068-10fa-460b-aaca-b8d1d7307d3f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5824b31d-1969-423d-b883-343f934a87ff">
+                    <propertyInstance
+                      Id="ced5df44-5fda-4784-b31e-fc1fd8b6c3f8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2823a89a-e5fb-46f9-8e75-a3ce5b4bcd96">
+                    <propertyInstance
+                      Id="d1f07c52-d9a1-4a6c-94fc-c88473e7c85a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf3b5db5-ccd9-4247-90ba-8bacb76bc3f7">
+                    <propertyInstance
+                      Id="f0cb15cc-cb65-422a-bf3b-9dc0324852a8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bea987c7-8aa7-44b9-9822-f59b853dd873">
+                    <propertyInstance
+                      Id="01dc1f3e-ad9d-4508-ac4c-34320d2b4e54"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

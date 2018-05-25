@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="08423518-a7c4-4f72-b8ab-aac7c704c290" name="UMLUseCaseDiagram" linkedPackageId="420db843-e986-424a-aa9a-7221c72f357c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="208da09e-1fc4-45a5-900a-7b19277b5182">
+      <profileInstance Id="d87799b8-16f9-4262-8a35-1a853114b682" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1e5c1045-fc21-4983-b42f-a5d74dd418d4">
+      <profileInstance Id="bc6e8fae-196f-47a3-bc8c-68733719eccc" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="470ce8db-5d79-4ffe-a0a5-a253f2a7bf25">
+      <profileInstance Id="6b8f27b1-4c0f-4a10-a6bb-af1bcba72eef" name="CSharpProfile">
+        <elementDefinition Id="9ea4ad9c-55bc-416d-b7a4-e43348039360" />
+      </profileInstance>
+      <elementDefinition Id="f3136e06-dd5d-4bd2-ba86-a61587b32d37" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="7e09be75-1a37-447c-99ad-e2cd48b6ccd8" name="Пользователь" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33f38010-f3c0-4eb4-9ee3-4acabe050503" />
+        <targetEnds>
+          <association Id="b920ffa8-8d88-4495-a6ca-0e33825b8e65" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Управление клиентами" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5f7c2948-db6d-4f17-9db8-f79800607c69" LastKnownName="Управление клиентами" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f8ca88cf-21f0-45d4-9529-556968334741" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="081b3784-6802-4309-b57c-43f228a1f6a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dc97013a-9314-4c13-ba86-cdf51d5a9ba3" name="Управление клиентами" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c9fa93d5-420c-4c55-8756-debe65dc5189" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e35ea551-6c97-45a3-ac7b-031ac21021dd" />
+          </association>
+          <association Id="175c586b-d7a4-41e7-97b9-0bafbd87f93f" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Просмотр клиентской базы" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0135a7e6-9a7c-45f2-9d30-638131e8020d" LastKnownName="Просмотр клиентской базы" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cd8e2ce9-7758-4b22-ae25-20f9b3673487" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4dbc3913-fc7e-4140-b274-8d4f3b91f8fb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="18a339a6-f071-4b8f-be22-5af95b8cae61" name="Просмотр клиентской базы" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9340c818-157b-494c-86c9-35d0f47b276d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b47366d7-0526-48d9-a37a-6f41c4ebc0bc" />
+          </association>
+          <association Id="56a68689-ecbb-412b-9571-7511004d82a4" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Управление заказами" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cd4f1f7a-db54-44ce-bf9c-35e8ef1ec59d" LastKnownName="Управление заказами" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="750b40b0-6dcb-4dfc-8b7c-9c82cf250c18" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d0626358-999b-4e92-a123-e007ae55f7e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0305df75-6e97-47cb-8306-fc45c3f9d6ab" name="Управление заказами" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="924a97e8-4ba0-43bd-8499-31ab73d4a6df" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="950e3df8-fecd-4bff-b22c-3f39cc286cf8" />
+          </association>
+          <association Id="7c405144-8751-4e8e-acc7-e5bd642e4742" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Просмотр журнала заказов" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="471fa157-76bb-4fc5-a6bd-6d278eebb4db" LastKnownName="Просмотр журнала заказов" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8f3dabc1-79d5-4e21-9944-e783002d020e" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f625a811-94be-4561-8e91-67a20a2b66c5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="728de6e1-0d4e-4414-8999-e83ec9d3bb5a" name="Просмотр журнала заказов" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="177ac93a-bb82-44dc-9de5-7ed0211dff1c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6e3638d0-fe87-42fc-a95b-59a8768b56a2" />
+          </association>
+          <association Id="28df9951-3c7c-4f19-b379-71eee8503a0d" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Управление услугами" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f8cead83-35aa-4cfc-9ec7-9dc962af89b9" LastKnownName="Управление услугами" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="308b9075-3067-4336-bf3f-53e30ded81ec" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="659ed798-7373-45ea-b2ea-cbcc3507cf8a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="17653066-7c01-47f8-b1ff-fe31b0cf9efd" name="Управление услугами" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="69265754-56dd-4c48-add3-0450ff9f814d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="06bc64cc-195a-4e51-a4b2-7cb036f9cc74" />
+          </association>
+          <association Id="6390dcb3-2789-4c05-9c8c-54d9fe3d51b7" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Просмотр списка услуг" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2d14c7fd-4884-4a2f-931d-542fdfdaeb4e" LastKnownName="Просмотр списка услуг" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a1dd4d8c-ad3e-442f-a847-77b2d2f5ba43" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b1ef2908-2a9a-4a8a-a86d-f0f4fee37426" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1b008a5d-8d00-4954-9e05-da83078111cc" name="Просмотр списка услуг" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a95b1b6-a778-43bc-b9e4-10d98ba2742e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="155ac861-bde1-415b-8626-353b9f4a16b5" />
+          </association>
+          <association Id="888c1eb3-3781-4688-9ef6-1756965f56ef" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Удаление услуги" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="aedb29f4-6b47-44e1-94e0-430b69a468ed" LastKnownName="Удаление услуги" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bbfb2eb0-0b9d-4ba6-8c78-401ee046a2e1" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0ea21325-49f1-4330-b747-a48418a938bb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cdc259eb-b4e0-4fc8-b212-330325917273" name="Удаление услуги" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="76e91092-269c-49bb-9e8f-1111ea91cd61" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7f8a494f-3f17-440d-83ac-164c7cf986cb" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="6d586441-930e-4a55-a8ea-a054631c3c38" name="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0ff28f5c-9745-4cc0-b9f6-4e9e446d82af" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="f8cead83-35aa-4cfc-9ec7-9dc962af89b9" name="Управление услугами" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="edea879d-ebbf-4c19-9b41-3270be505556" />
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="0135a7e6-9a7c-45f2-9d30-638131e8020d" name="Просмотр клиентской базы" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6c345cfc-98ea-425f-a544-891bb68298dc" />
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="20c00d81-3011-42ea-b6dc-9791accce798" name="Добавление услуги" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="72c97900-9c4d-4547-abbb-9b1650005b82" />
+        <generalsInternal>
+          <generalization Id="f351814c-2cfc-4a47-b009-4c9263df9c2a" isSubstitutable="false">
+            <useCaseMoniker Id="2d14c7fd-4884-4a2f-931d-542fdfdaeb4e" LastKnownName="Просмотр списка услуг" />
+            <elementDefinition Id="6635c881-a64a-4be6-8244-2f2a11e45966" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3d21af27-b187-4e51-9bc4-9d85038ae329" name="Добавление заказа" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7cff7612-bb30-456b-a019-b43dc2ba7d3d" />
+        <generalsInternal>
+          <generalization Id="91f7b48e-4c5a-4abf-9b31-fe22f17de9e4" isSubstitutable="false">
+            <useCaseMoniker Id="cd4f1f7a-db54-44ce-bf9c-35e8ef1ec59d" LastKnownName="Управление заказами" />
+            <elementDefinition Id="a1db0047-2379-4b6d-af90-4b8b50daf63f" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="16860761-3959-4822-ab84-dd6b081e202b" name="Редактирование клиента" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e64187c4-36ba-4a0d-b969-b2971121459e" />
+        <generalsInternal>
+          <generalization Id="c0e24082-f9be-4cf6-a33a-d72ce587f7df" isSubstitutable="false">
+            <useCaseMoniker Id="5f7c2948-db6d-4f17-9db8-f79800607c69" LastKnownName="Управление клиентами" />
+            <elementDefinition Id="14f1e309-dc88-4760-89c7-46a7b95e2428" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5f7c2948-db6d-4f17-9db8-f79800607c69" name="Управление клиентами" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a1809612-117e-4ff9-a325-a4f87e16610e" />
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="0a7e7801-6526-4145-947c-2831b42b7e93" name="Удаление заказа" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b5f2313f-a52c-494c-bf69-294773530f8f" />
+        <generalsInternal>
+          <generalization Id="e88ed2ef-3196-4042-aa85-4c59bd2d2899" isSubstitutable="false">
+            <useCaseMoniker Id="cd4f1f7a-db54-44ce-bf9c-35e8ef1ec59d" LastKnownName="Управление заказами" />
+            <elementDefinition Id="72235670-dac2-409a-9edb-986ac8df994d" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="aedb29f4-6b47-44e1-94e0-430b69a468ed" name="Удаление услуги" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4a8ab68b-0843-46a7-946a-240b7b71f710" />
+        <generalsInternal>
+          <generalization Id="0120db3e-69a3-47de-99fc-503cc0ae317d" isSubstitutable="false">
+            <useCaseMoniker Id="2d14c7fd-4884-4a2f-931d-542fdfdaeb4e" LastKnownName="Просмотр списка услуг" />
+            <elementDefinition Id="757d981b-f869-46f3-ae1d-3fbcad7737b7" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="cd4f1f7a-db54-44ce-bf9c-35e8ef1ec59d" name="Управление заказами" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5c79a09c-b108-4bb6-8464-669310ddc088" />
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="471fa157-76bb-4fc5-a6bd-6d278eebb4db" name="Просмотр журнала заказов" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0627bddd-eb09-4d97-9f2b-835003425061" />
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="71be7a94-741c-4d02-bd02-77dc485f2cb4" name="Добавление клиента" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="426ad997-375e-4828-b742-a1cade3b42dd" />
+        <generalsInternal>
+          <generalization Id="87be71ea-cdf2-4cd3-be5f-a93a99210f93" isSubstitutable="false">
+            <useCaseMoniker Id="5f7c2948-db6d-4f17-9db8-f79800607c69" LastKnownName="Управление клиентами" />
+            <elementDefinition Id="f4f20f4d-8d5d-4b86-ae62-d1258fc2a831" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5d8e1de8-fce8-475b-a2c1-7c234f76a3ec" name="Удаление клиента" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a55565fb-24fc-4509-afcf-0c2ceca8109d" />
+        <generalsInternal>
+          <generalization Id="4038abeb-9ee6-45e1-b2af-d2e1be81f6c6" isSubstitutable="false">
+            <useCaseMoniker Id="5f7c2948-db6d-4f17-9db8-f79800607c69" LastKnownName="Управление клиентами" />
+            <elementDefinition Id="b7f56344-97f1-45f7-8ba6-028d2c786cbe" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="45fa1872-be15-40eb-8691-5a4a05cc52a9" name="Редактирование стоимости услуги" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e1b33089-827a-4ddf-9637-5f45441464a0" />
+        <generalsInternal>
+          <generalization Id="8b9fb218-3587-44cc-ac15-2b067759d025" isSubstitutable="false">
+            <useCaseMoniker Id="2d14c7fd-4884-4a2f-931d-542fdfdaeb4e" LastKnownName="Просмотр списка услуг" />
+            <elementDefinition Id="c1aa7509-ec5d-4390-82e0-fb515a17d290" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ea7fb7c9-82da-4c0d-84ec-d45b7146333f" name="Редактирование заказа" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4aa459e7-d00b-46c5-8240-b8eaad0f2f91" />
+        <generalsInternal>
+          <generalization Id="ba3204d0-b856-491c-9a99-84c3312a71a1" isSubstitutable="false">
+            <useCaseMoniker Id="cd4f1f7a-db54-44ce-bf9c-35e8ef1ec59d" LastKnownName="Управление заказами" />
+            <elementDefinition Id="34e1c587-150c-44e5-b7db-c6591cbed8f7" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="2d14c7fd-4884-4a2f-931d-542fdfdaeb4e" name="Просмотр списка услуг" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="797465e1-d10a-4946-9d3c-3c07728236bd" />
+        <subjects>
+          <subsystemMoniker Id="6d586441-930e-4a55-a8ea-a054631c3c38" LastKnownName="ЖУРНАЛ ЗАКАЗА УСЛУГИ ПОЛИВА И СТРИЖКИ" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="420db843-e986-424a-aa9a-7221c72f357c" name="ModelingProject">
+    <elementDefinition Id="9612507a-ba81-44a0-bfd2-8c4cd58bccca" />
+  </package>
+</useCaseModelRoot>
