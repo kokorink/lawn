@@ -10,11 +10,14 @@
 
     $(document).ready(function () {
         OrderList();
+
     });
 
     // Получение всех клиентов по ajax-запросу
     function ClientList() {
+        $("#EditClientForm").hide();
         $("#mainBlock").html("");
+        $("#AddClientForm").hide();
         $.ajax({
             url: '/api/ClientAPI/',
             type: 'GET',
@@ -22,18 +25,57 @@
             success: function (data) {
 
                 WriteClientList(data);
+
             }
         });
 
         $("#ViewClient").hide();
         $("#mainBlock").show();
         $("#AddClientButton").show();
+        $("#AddServiceForm").hide();
 
     }
 
     function OrderList() {
+        $("#EditOrderForm").hide();
         $("#mainBlock").html("");
+        $("#AddOrderForm").hide();
+        $.ajax({
+            url: '/api/OrderAPI/',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+
+                WriteOrderList(data);
+
+            }
+        });
+
+        $("#ViewClient").hide();
+        $("#mainBlock").show();
+        $("#AddOrderButton").show();
+        $("#AddServiceForm").hide();
     }
+
+
+    function WriteOrderList(orders) {
+        var strResult = "<div><a class='btn btn-default' id='AddOrderButton' onclick='AddOrderCall();'>Добавить заказ</a></div>" +
+            "<p></p> <table class='table'><tr><th>Номер заказа</th><th>Id Клиента</th><th>Тип услуги</th><th>Адрес</th><th>Площадь газона</th><th>Стоимость</th><th>Время заказа</th><th></th></tr>";
+        $.each(orders, function (index, order) {
+            strResult += "<tr><td>" + order.idOrder + "</td><td>" + order.idClient + "</td><td>" + order.nameService + "</td><td>" + order.lawnAdress + "</td><td>" + order.lawnArea + "</td><td>" + order.totalCost + "</td><td>" + order.orderTime + 
+
+                "<a data-item='" + order.idClient + "' onclick='ViewOrder(this);'>          Детализация</a> | " +
+                "<a data-item='" + order.idClient + "' onclick='EditOrderCall(this);'>Изменение</a> | " +
+                "<a data-item='" + order.idClient + "' onclick='DeleteOrder(this);'>Удаление</a> </td> </tr>"
+                ;
+        });
+        strResult += "</table>";
+        $("#mainBlock").html(strResult);
+        $("#mainBlock").show();
+
+    }
+
+
 
     function ViewClient(el) {
         // получаем id редактируемого объекта
@@ -74,15 +116,138 @@
         });
     }
 
+    function DeleteClient(el) {
+        var id = $(el).attr('data-item');
+        $.ajax({
+            url: '/api/ClientAPI/' + id,
+            type: 'DELETE',
+            dataType: 'json',
+            //contentType: "application/json;charset=utf-8",
+            success: function (data) 
+            {
+                ClientList();
+            }
+        });
+    }
+
+    function DeleteService(el) {
+        var id = $(el).attr('data-item');
+        $.ajax({
+            url: '/api/ServiceTypeAPI/' + id,
+            type: 'DELETE',
+            dataType: 'json',
+            success: function (data) {
+                ServiceList();
+            }
+        });
+    }
+
+
+    function AddClientCall() {
+        $("#AddClientForm").show();
+        $("#mainBlock").html("");
+        $("#mainBlock").hide();
+    }
+
+    function AddClient() {
+        var client = {
+            clientPhone: $('#clientPhone').val(),
+            clientName: $('#clientName').val(),
+        };
+
+        $.ajax({
+            url: '/api/ClientAPI/',
+            type: 'POST',
+            data: JSON.stringify(client),
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                $('#AddClientForm').hide();
+                ClientList();
+                $("#clientPhone").val('');
+                $("#clientName").val('');
+
+            }
+        });
+
+    }
+
+    function AddServiceCall() {
+        $("#AddServiceForm").show();
+        $("#mainBlock").html("");
+        $("#mainBlock").hide();
+    }
+
+    function EditServiceCall(el) {
+            // получаем id редактируемого объекта
+            var id = $(el).attr('data-item');
+   
+            $.ajax({
+                url: '/api/ClientAPI/' + id,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $("#nameServiceEdit").val(data.nameService);
+                    $("#priceServiceEdit").val(data.priceService);
+
+                    $("#mainBlock").hide();
+                    $("#EditServiceForm").show();
+                    $("#AddServiceButton").hide();
+
+                }
+            });
+    }
+
+    function EditClientCall(el) {
+        // получаем id редактируемого объекта
+        var id = $(el).attr('data-item');
+
+        $.ajax({
+            url: '/api/ClientAPI/' + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                $("#nameClientEdit").val(data.clientName);
+                $("#clientPhoneEdit").val(data.clientPhone);
+                $("#idClientEdit").val(data.idClient);
+                $("#mainBlock").hide();
+                $("#EditClientForm").show();
+                $("#AddServiceButton").hide();
+
+            }
+        });
+    }
+
+    function AddService() {
+        var service = {
+            nameService: $('#nameService').val(),
+            priceService: $('#priceService').val(),
+        };
+
+        $.ajax({
+            url: '/api/ServiceTypeAPI/',
+            type: 'POST',
+            data: JSON.stringify(service),
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                $('#AddServiceForm').hide();
+                ServiceList();
+                $("#nameService").val('');
+                $("#priceService").val('');
+
+            }
+        });
+
+    }
+
 
     function WriteClientList(clients) {
-        var strResult = "<div><a class='btn btn-default' id='AddClientButton' onclick='AddOrder();'>Добавить Клиента</a></div>" +
+        var strResult = "<div><a class='btn btn-default' id='AddClientButton' onclick='AddClientCall();'>Добавить Клиента</a></div>" +
             "<p></p> <table class='table'><tr><th>ID клиента</th><th>Имя клиента</th><th>Телефон</th><th></th></tr>";
         $.each(clients, function (index, client) {
             strResult += "<tr><td>" + client.idClient + "</td><td>" + client.clientName + "</td><td>" + client.clientPhone + "</td><td>"+
 
                 "<a data-item='" + client.idClient + "' onclick='ViewClient(this);'>Детализация</a> | " +
-                "<a data-item='" + client.idClient + "' onclick='EditClient(this);'>Изменение</a> | " +
+                "<a data-item='" + client.idClient + "' onclick='EditClientCall(this);'>Изменение</a> | " +
                 "<a data-item='" + client.idClient + "' onclick='DeleteClient(this);'>Удаление</a> </td> </tr>"
                 ;
         });
@@ -93,6 +258,8 @@
 
     function ServiceList() {
         $("#mainBlock").html("");
+        $("#EditServiceForm").hide();
+        $('#AddServiceForm').hide();
         $.ajax({
             url: '/api/ServiceTypeAPI/',
             type: 'GET',
@@ -100,22 +267,72 @@
             success: function (data) {
 
                 WriteServiceList(data);
+
+            }
+        });
+    }
+
+    function EditClientSave() {
+
+        var service = {
+            clientName: $('#nameClientEdit').val(),
+            idClient: $('#idClientEdit').val(),
+            clientPhone: $('#clientPhoneEdit').val(),
+        };
+
+        $.ajax({
+            url: '/api/ClientAPI/'/* + id*/,
+            type: 'PUT',
+            data: JSON.stringify(service),
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                $("#nameClientEdit").val('');
+                $("#idClientEdit").val('');
+                $("#clientPhoneEdit").val('');
+                $("#EditClientForm").hide();
+                ClientList();
+            }
+        });
+    }
+
+
+    function EditServiceSave() {
+        //var id = $('#nameServiceEdit').val();
+
+        var service = {
+            nameService: $('#nameServiceEdit').val(),
+            priceService: $('#priceServiceEdit').val(),
+        };
+
+        $.ajax({
+            url: '/api/ServiceTypeAPI/'/* + id*/,
+            type: 'PUT',
+            data: JSON.stringify(service),
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                $("#nameServiceEdit").val('');
+                $("#priceServiceEdit").val('');
+                $("#EditServiceForm").hide();
+                ServiceList();
             }
         });
     }
 
     function WriteServiceList(services) {
-        var strResult = "<div><a class='btn btn-default' id='AddServiceButton' onclick='AddService();'>Добавить услугу</a></div><p></p><table class='table'><tr><th>Название</th><th>Цена</th><th></th></tr>";
+        $("#AddClientForm").hide();
+
+        var strResult = "<div><a class='btn btn-default' id='AddServiceButton' onclick='AddServiceCall();'>Добавить услугу</a></div><p></p><table class='table'><tr><th>Название</th><th>Цена</th><th></th></tr>";
         $.each(services, function (index, service) {
             strResult += "<tr><td>" + service.nameService + "</td><td>" + service.priceService + "</td><td>" +
 
                 "<a data-item='" + service.nameService + "' onclick='ViewService(this);'>Детализация</a> | " +
-                "<a data-item='" + service.nameService + "' onclick='EditService(this);'>Изменение</a> | " +
+                "<a data-item='" + service.nameService + "' onclick='EditServiceCall(this);'>Изменение</a> | " +
                 "<a data-item='" + service.nameService + "' onclick='DeleteService(this);'>Удаление</a> </td> </tr>"
                 ;
         });
         strResult += "</table>";
         $("#mainBlock").html(strResult);
+        $("#mainBlock").show();
 
     }
 
@@ -127,7 +344,7 @@
 <div>
     <h2>Работа с API</h2>
     <div class="form-group">
-        <a class="btn btn-default" id="ViewOrdersButton" onclick='OrederList();'>Заказы</a>
+        <a class="btn btn-default" id="ViewOrdersButton" onclick='OrderList();'>Заказы</a>
 
         <a class="btn btn-default" id="ViewClientsButton" onclick='ClientList();'>Клиенты</a>
 
@@ -139,3 +356,209 @@
 <div id="mainBlock"></div>
 
 
+<div id="AddClientForm" style="display:none">
+
+    <h2>Добавление клента</h2>
+
+    <hr>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="">Имя клиента</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="clientName" name="clientName" type="text" value="">
+            <span class="field-validation-valid text-danger" data-valmsg-for="clientName" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="">Телефон клиента</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="clientPhone" name="clientPhone" type="text" value="">
+            <span class="field-validation-valid text-danger" data-valmsg-for="clientPhone" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input value="Добавить" class="btn btn-success btn-sm" onclick="AddClientCall();" />
+        </div>
+    </div>
+    <div>
+        <a class="btn btn-default" onclick='ClientList();'>Назад</a>
+    </div>
+</div>
+
+<div id="AddServiceForm" style="display:none">
+
+    <h2>Добавление</h2>
+
+    <div class="form-horizontal">
+
+        <hr>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="">Название</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="nameService" name="nameService" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="nameService" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="">Цена за кв метр</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля priceService должно быть число." data-val-required="Требуется поле priceService." id="priceService" name="priceService" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="priceService" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input value="Добавить" class="btn btn-success btn-sm" onclick="AddService();" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a class="btn btn-default" onclick='ServiceList();'>Назад</a>
+    </div>
+
+
+    <hr>
+
+</div>
+
+<div id="EditServiceForm" style="display:none">
+
+
+
+    <h2>Редактирование</h2>
+    @*<h4 id="nameService" value=""></h4>*@
+
+    <div class="form-horizontal">
+        <hr>
+
+        <input id="nameServiceEdit" type="hidden"/>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="">Цена за кв метр</label>
+            <div class="col-md-10">
+                <input input type="text" class="form-control" id="priceServiceEdit">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input value="Сохранить" class="btn btn-default" onclick="EditServiceSave();">
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-default" onclick='ServiceList();'>Назад</a>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div id="EditClientForm" style="display:none">
+
+
+
+    <h2>Редактирование</h2>
+    @*<h4 id="nameService" value=""></h4>*@
+
+    <div class="form-horizontal">
+        <hr>
+
+        <input id="idClientEdit" type="hidden" />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="">Имя клиента</label>
+            <div class="col-md-10">
+                <input input type="text" class="form-control" id="nameClientEdit">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="">Телефон</label>
+            <div class="col-md-10">
+                <input input type="text" class="form-control" id="clientPhoneEdit">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input value="Сохранить" class="btn btn-default" onclick="EditClientSave();">
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-default" onclick='ClientList();'>Назад</a>
+        </div>
+    </div>
+ <hr>
+
+</div>  
+
+<div id="AddFormOrder" style="display:none" >
+
+
+    <h2>Создание заказа</h2>
+        <div class="form-horizontal">
+
+            <hr>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="">Адрес</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="lawnAdress" name="lawnAdress" type="text" value="">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="lawnAdress" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="">Площадь</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля lawnArea должно быть число." data-val-required="Требуется поле lawnArea." id="lawnArea" name="lawnArea" type="text" value="">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="lawnArea" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="">Клиент</label>
+                <div class="col-md-10">
+                    <select class="form-control" id="idClient" name="idClient">
+                        <option value="63">Клиент22</option>
+                        <option value="64">Клиент3</option>
+                        <option value="139">user1</option>
+                    </select>
+                    <span class="field-validation-valid text-danger" data-valmsg-for="idClient" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="">Услуга</label>
+                <div class="col-md-10">
+                    <select class="form-control" id="nameService" name="nameService">
+                        <option value="Комплекс">Комплекс</option>
+                        <option value="Полив">Полив</option>
+                        <option value="Стрижка">Стрижка</option>
+                    </select>
+                    <span class="field-validation-valid text-danger" data-valmsg-for="nameService" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Создать" class="btn btn-default">
+                </div>
+            </div>
+        </div>
+    <div class="btn btn-default">
+        <a href="/Orders">Отмена</a>
+    </div>
+
+
+    <hr>
+
+</div>

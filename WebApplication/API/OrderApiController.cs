@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,11 @@ namespace WebApplication.API
     public class OrderApiController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<Order> Get()
         {
-            return new string[] { "value1", "value2" };
+            IGenericRepository<Order> RepO = new GenericRepository<Order>();
+            List<Order> ListO = RepO.GetAll().ToList();
+            return ListO;
         }
 
         // GET api/<controller>/5

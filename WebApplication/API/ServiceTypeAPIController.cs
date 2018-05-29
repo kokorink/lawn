@@ -27,18 +27,35 @@ namespace WebApplication.API
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody]ServiceType serviceType)
         {
+            if (serviceType.priceService >=0 || serviceType.nameService != null)
+            {
+                IGenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
+                RepST.Add(serviceType);
+                RepST.Save();
+
+            }
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(/*string id, */[FromBody]ServiceType serviceType)
         {
+            if (serviceType != null || serviceType.priceService >= 0)
+            {
+                IGenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
+                RepST.Edit(serviceType);
+                RepST.Save();
+            }
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public void Delete(string id)
         {
+            IGenericRepository<ServiceType> RepST = new GenericRepository<ServiceType>();
+            ServiceType serviceType = RepST.FindBy(item => item.nameService == id).FirstOrDefault();
+            RepST.Delete(serviceType);
+            RepST.Save();
         }
     }
 }
