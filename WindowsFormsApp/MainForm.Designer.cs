@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageOrder = new System.Windows.Forms.TabPage();
             this.tabPageClient = new System.Windows.Forms.TabPage();
@@ -35,12 +36,23 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonAddClient = new System.Windows.Forms.Button();
+            this.buttonAddService = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.dataGridViewClients = new System.Windows.Forms.DataGridView();
             this.dataGridViewServices = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPageOrder.SuspendLayout();
             this.tabPageClient.SuspendLayout();
@@ -60,6 +72,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -134,7 +148,7 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.button2);
+            this.splitContainer2.Panel1.Controls.Add(this.buttonAddClient);
             // 
             // splitContainer2.Panel2
             // 
@@ -152,7 +166,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button3);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonAddService);
             // 
             // splitContainer1.Panel2
             // 
@@ -161,25 +175,27 @@
             this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 4;
             // 
-            // button2
+            // buttonAddClient
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Добавить клиента";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonAddClient.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonAddClient.Location = new System.Drawing.Point(0, 0);
+            this.buttonAddClient.Name = "buttonAddClient";
+            this.buttonAddClient.Size = new System.Drawing.Size(115, 32);
+            this.buttonAddClient.TabIndex = 1;
+            this.buttonAddClient.Text = "Добавить клиента";
+            this.buttonAddClient.UseVisualStyleBackColor = true;
+            this.buttonAddClient.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonAddService
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 32);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Добавить услугу";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonAddService.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonAddService.Location = new System.Drawing.Point(0, 0);
+            this.buttonAddService.Name = "buttonAddService";
+            this.buttonAddService.Size = new System.Drawing.Size(105, 32);
+            this.buttonAddService.TabIndex = 1;
+            this.buttonAddService.Text = "Добавить услугу";
+            this.buttonAddService.UseVisualStyleBackColor = true;
+            this.buttonAddService.Click += new System.EventHandler(this.buttonAddService_Click);
             // 
             // button1
             // 
@@ -203,23 +219,124 @@
             // 
             // dataGridViewClients
             // 
+            this.dataGridViewClients.AllowUserToAddRows = false;
+            this.dataGridViewClients.AllowUserToDeleteRows = false;
+            this.dataGridViewClients.AutoGenerateColumns = false;
             this.dataGridViewClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idClientDataGridViewTextBoxColumn,
+            this.clientNameDataGridViewTextBoxColumn,
+            this.clientPhoneDataGridViewTextBoxColumn,
+            this.Column1,
+            this.Column2});
+            this.dataGridViewClients.DataSource = this.clientBindingSource;
             this.dataGridViewClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewClients.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewClients.Name = "dataGridViewClients";
+            this.dataGridViewClients.ReadOnly = true;
             this.dataGridViewClients.RowHeadersVisible = false;
             this.dataGridViewClients.Size = new System.Drawing.Size(786, 382);
             this.dataGridViewClients.TabIndex = 1;
+            this.dataGridViewClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClients_CellContentClick);
             // 
             // dataGridViewServices
             // 
+            this.dataGridViewServices.AllowUserToAddRows = false;
+            this.dataGridViewServices.AllowUserToDeleteRows = false;
+            this.dataGridViewServices.AutoGenerateColumns = false;
             this.dataGridViewServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewServices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameServiceDataGridViewTextBoxColumn,
+            this.priceServiceDataGridViewTextBoxColumn,
+            this.Column3,
+            this.Column4});
+            this.dataGridViewServices.DataSource = this.serviceBindingSource;
             this.dataGridViewServices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewServices.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewServices.Name = "dataGridViewServices";
+            this.dataGridViewServices.ReadOnly = true;
             this.dataGridViewServices.RowHeadersVisible = false;
             this.dataGridViewServices.Size = new System.Drawing.Size(786, 382);
             this.dataGridViewServices.TabIndex = 1;
+            this.dataGridViewServices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewServices_CellContentClick);
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Text = "Изменить";
+            this.Column3.UseColumnTextForButtonValue = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Text = "Удалить";
+            this.Column4.UseColumnTextForButtonValue = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Text = "Изменить";
+            this.Column1.UseColumnTextForButtonValue = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Text = "Удалить";
+            this.Column2.UseColumnTextForButtonValue = true;
+            // 
+            // idClientDataGridViewTextBoxColumn
+            // 
+            this.idClientDataGridViewTextBoxColumn.DataPropertyName = "idClient";
+            this.idClientDataGridViewTextBoxColumn.HeaderText = "ID Клиента";
+            this.idClientDataGridViewTextBoxColumn.Name = "idClientDataGridViewTextBoxColumn";
+            this.idClientDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientNameDataGridViewTextBoxColumn
+            // 
+            this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "clientName";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Имя клиента";
+            this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
+            this.clientNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientPhoneDataGridViewTextBoxColumn
+            // 
+            this.clientPhoneDataGridViewTextBoxColumn.DataPropertyName = "clientPhone";
+            this.clientPhoneDataGridViewTextBoxColumn.HeaderText = "Телефон клиента";
+            this.clientPhoneDataGridViewTextBoxColumn.Name = "clientPhoneDataGridViewTextBoxColumn";
+            this.clientPhoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientPhoneDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(WindowsFormsApp.Client);
+            // 
+            // nameServiceDataGridViewTextBoxColumn
+            // 
+            this.nameServiceDataGridViewTextBoxColumn.DataPropertyName = "nameService";
+            this.nameServiceDataGridViewTextBoxColumn.HeaderText = "Название услуги";
+            this.nameServiceDataGridViewTextBoxColumn.Name = "nameServiceDataGridViewTextBoxColumn";
+            this.nameServiceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameServiceDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // priceServiceDataGridViewTextBoxColumn
+            // 
+            this.priceServiceDataGridViewTextBoxColumn.DataPropertyName = "priceService";
+            this.priceServiceDataGridViewTextBoxColumn.HeaderText = "Стоимость услуги";
+            this.priceServiceDataGridViewTextBoxColumn.Name = "priceServiceDataGridViewTextBoxColumn";
+            this.priceServiceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceServiceDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(WindowsFormsApp.Service);
             // 
             // MainForm
             // 
@@ -249,6 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,11 +382,22 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridViewOrders;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAddClient;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonAddService;
         private System.Windows.Forms.DataGridView dataGridViewClients;
         private System.Windows.Forms.DataGridView dataGridViewServices;
+        private System.Windows.Forms.BindingSource clientBindingSource;
+        private System.Windows.Forms.BindingSource serviceBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientPhoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameServiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceServiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Column3;
+        private System.Windows.Forms.DataGridViewButtonColumn Column4;
     }
 }
 
