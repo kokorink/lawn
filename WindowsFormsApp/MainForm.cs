@@ -26,8 +26,21 @@ namespace WindowsFormsApp
             dataGridViewClients.DataSource = clients;
             var services = GetServices();
             dataGridViewServices.DataSource = services;
+            var orders = GetOrders();
+            dataGridViewOrders.DataSource = orders;
 
         }
+
+        public IEnumerable<Order> GetOrders()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync(App_path + "api/OrderAPI/").Result;
+                return JsonConvert.DeserializeObject<IEnumerable<Order>>(response.Content.ReadAsStringAsync().Result);
+            }
+
+        }
+
 
         public IEnumerable<Client> GetClients()
         {

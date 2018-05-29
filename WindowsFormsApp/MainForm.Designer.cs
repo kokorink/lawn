@@ -46,6 +46,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +54,15 @@
             this.nameServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceServiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lawnAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lawnAreaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameServiceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPageOrder.SuspendLayout();
             this.tabPageClient.SuspendLayout();
@@ -72,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +96,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 450);
+            this.tabControl1.Size = new System.Drawing.Size(1058, 450);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPageOrder
@@ -94,7 +105,7 @@
             this.tabPageOrder.Location = new System.Drawing.Point(4, 22);
             this.tabPageOrder.Name = "tabPageOrder";
             this.tabPageOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOrder.Size = new System.Drawing.Size(792, 424);
+            this.tabPageOrder.Size = new System.Drawing.Size(1050, 424);
             this.tabPageOrder.TabIndex = 0;
             this.tabPageOrder.Text = "Заказы";
             this.tabPageOrder.UseVisualStyleBackColor = true;
@@ -105,7 +116,7 @@
             this.tabPageClient.Location = new System.Drawing.Point(4, 22);
             this.tabPageClient.Name = "tabPageClient";
             this.tabPageClient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageClient.Size = new System.Drawing.Size(792, 424);
+            this.tabPageClient.Size = new System.Drawing.Size(1159, 424);
             this.tabPageClient.TabIndex = 1;
             this.tabPageClient.Text = "Клиенты";
             this.tabPageClient.UseVisualStyleBackColor = true;
@@ -116,7 +127,7 @@
             this.tabPageService.Location = new System.Drawing.Point(4, 22);
             this.tabPageService.Name = "tabPageService";
             this.tabPageService.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageService.Size = new System.Drawing.Size(792, 424);
+            this.tabPageService.Size = new System.Drawing.Size(1159, 424);
             this.tabPageService.TabIndex = 2;
             this.tabPageService.Text = "Услуги";
             this.tabPageService.UseVisualStyleBackColor = true;
@@ -135,7 +146,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dataGridViewOrders);
-            this.splitContainer3.Size = new System.Drawing.Size(786, 418);
+            this.splitContainer3.Size = new System.Drawing.Size(1044, 418);
             this.splitContainer3.SplitterDistance = 32;
             this.splitContainer3.TabIndex = 3;
             // 
@@ -153,7 +164,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dataGridViewClients);
-            this.splitContainer2.Size = new System.Drawing.Size(786, 418);
+            this.splitContainer2.Size = new System.Drawing.Size(1153, 418);
             this.splitContainer2.SplitterDistance = 32;
             this.splitContainer2.TabIndex = 4;
             // 
@@ -171,7 +182,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridViewServices);
-            this.splitContainer1.Size = new System.Drawing.Size(786, 418);
+            this.splitContainer1.Size = new System.Drawing.Size(1153, 418);
             this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -209,12 +220,27 @@
             // 
             // dataGridViewOrders
             // 
+            this.dataGridViewOrders.AllowUserToAddRows = false;
+            this.dataGridViewOrders.AllowUserToDeleteRows = false;
+            this.dataGridViewOrders.AutoGenerateColumns = false;
             this.dataGridViewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idOrderDataGridViewTextBoxColumn,
+            this.lawnAdressDataGridViewTextBoxColumn,
+            this.lawnAreaDataGridViewTextBoxColumn,
+            this.totalCostDataGridViewTextBoxColumn,
+            this.orderTimeDataGridViewTextBoxColumn,
+            this.idClientDataGridViewTextBoxColumn1,
+            this.nameServiceDataGridViewTextBoxColumn1,
+            this.Column5,
+            this.Column6});
+            this.dataGridViewOrders.DataSource = this.orderBindingSource;
             this.dataGridViewOrders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewOrders.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewOrders.Name = "dataGridViewOrders";
+            this.dataGridViewOrders.ReadOnly = true;
             this.dataGridViewOrders.RowHeadersVisible = false;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(786, 382);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(1044, 382);
             this.dataGridViewOrders.TabIndex = 0;
             // 
             // dataGridViewClients
@@ -235,7 +261,7 @@
             this.dataGridViewClients.Name = "dataGridViewClients";
             this.dataGridViewClients.ReadOnly = true;
             this.dataGridViewClients.RowHeadersVisible = false;
-            this.dataGridViewClients.Size = new System.Drawing.Size(786, 382);
+            this.dataGridViewClients.Size = new System.Drawing.Size(1153, 382);
             this.dataGridViewClients.TabIndex = 1;
             this.dataGridViewClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClients_CellContentClick);
             // 
@@ -256,7 +282,7 @@
             this.dataGridViewServices.Name = "dataGridViewServices";
             this.dataGridViewServices.ReadOnly = true;
             this.dataGridViewServices.RowHeadersVisible = false;
-            this.dataGridViewServices.Size = new System.Drawing.Size(786, 382);
+            this.dataGridViewServices.Size = new System.Drawing.Size(1153, 382);
             this.dataGridViewServices.TabIndex = 1;
             this.dataGridViewServices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewServices_CellContentClick);
             // 
@@ -291,6 +317,10 @@
             this.Column2.ReadOnly = true;
             this.Column2.Text = "Удалить";
             this.Column2.UseColumnTextForButtonValue = true;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(WindowsFormsApp.Order);
             // 
             // idClientDataGridViewTextBoxColumn
             // 
@@ -338,11 +368,81 @@
             // 
             this.serviceBindingSource.DataSource = typeof(WindowsFormsApp.Service);
             // 
+            // idOrderDataGridViewTextBoxColumn
+            // 
+            this.idOrderDataGridViewTextBoxColumn.DataPropertyName = "idOrder";
+            this.idOrderDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
+            this.idOrderDataGridViewTextBoxColumn.Name = "idOrderDataGridViewTextBoxColumn";
+            this.idOrderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idOrderDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // lawnAdressDataGridViewTextBoxColumn
+            // 
+            this.lawnAdressDataGridViewTextBoxColumn.DataPropertyName = "lawnAdress";
+            this.lawnAdressDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.lawnAdressDataGridViewTextBoxColumn.Name = "lawnAdressDataGridViewTextBoxColumn";
+            this.lawnAdressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lawnAdressDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // lawnAreaDataGridViewTextBoxColumn
+            // 
+            this.lawnAreaDataGridViewTextBoxColumn.DataPropertyName = "lawnArea";
+            this.lawnAreaDataGridViewTextBoxColumn.HeaderText = "Площадь газона";
+            this.lawnAreaDataGridViewTextBoxColumn.Name = "lawnAreaDataGridViewTextBoxColumn";
+            this.lawnAreaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lawnAreaDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // totalCostDataGridViewTextBoxColumn
+            // 
+            this.totalCostDataGridViewTextBoxColumn.DataPropertyName = "totalCost";
+            this.totalCostDataGridViewTextBoxColumn.HeaderText = "Сумма заказа";
+            this.totalCostDataGridViewTextBoxColumn.Name = "totalCostDataGridViewTextBoxColumn";
+            this.totalCostDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalCostDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // orderTimeDataGridViewTextBoxColumn
+            // 
+            this.orderTimeDataGridViewTextBoxColumn.DataPropertyName = "orderTime";
+            this.orderTimeDataGridViewTextBoxColumn.HeaderText = "Время заказа";
+            this.orderTimeDataGridViewTextBoxColumn.Name = "orderTimeDataGridViewTextBoxColumn";
+            this.orderTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderTimeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idClientDataGridViewTextBoxColumn1
+            // 
+            this.idClientDataGridViewTextBoxColumn1.DataPropertyName = "idClient";
+            this.idClientDataGridViewTextBoxColumn1.HeaderText = "ID Клиента";
+            this.idClientDataGridViewTextBoxColumn1.Name = "idClientDataGridViewTextBoxColumn1";
+            this.idClientDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nameServiceDataGridViewTextBoxColumn1
+            // 
+            this.nameServiceDataGridViewTextBoxColumn1.DataPropertyName = "nameService";
+            this.nameServiceDataGridViewTextBoxColumn1.HeaderText = "Услуга";
+            this.nameServiceDataGridViewTextBoxColumn1.Name = "nameServiceDataGridViewTextBoxColumn1";
+            this.nameServiceDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Text = "Изменить";
+            this.Column5.UseColumnTextForButtonValue = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Text = "Удалить";
+            this.Column6.UseColumnTextForButtonValue = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.ShowIcon = false;
@@ -366,6 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -398,6 +499,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceServiceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.BindingSource orderBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOrderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lawnAdressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lawnAreaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClientDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameServiceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn Column5;
+        private System.Windows.Forms.DataGridViewButtonColumn Column6;
     }
 }
 
