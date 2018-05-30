@@ -143,15 +143,22 @@ namespace WindowsFormsApp
             }
 
         }
-
         
-
         public Client GetIdClient(int id)
         {
             using (var client = new HttpClient())
             {
                 var response = client.GetAsync(App_path + "api/ClientAPI/" + id).Result;
                 return JsonConvert.DeserializeObject<Client>(response.Content.ReadAsStringAsync().Result);
+            }
+        }
+
+        public Order GetIdOrder(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync(App_path + "api/OrderAPI/" + id).Result;
+                return JsonConvert.DeserializeObject<Order>(response.Content.ReadAsStringAsync().Result);
             }
         }
 
@@ -163,7 +170,14 @@ namespace WindowsFormsApp
             }
         }
 
-        
+        public void DeleteOrder(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.DeleteAsync(App_path + "/api/OrderAPI/" + id).Result;
+            }
+        }
+
 
         public void EditClient(Client client)
         {
@@ -191,6 +205,14 @@ namespace WindowsFormsApp
             }
         }
 
+        public void AddOrder(Order order)
+        {
+            using (var httpclient = new HttpClient())
+            {
+                var response = httpclient.PostAsJsonAsync(App_path + "/api/OrderAPI/", order).Result;
+            }
+        }
+
 
         private void buttonAddService_Click(object sender, EventArgs e)
         {
@@ -209,5 +231,55 @@ namespace WindowsFormsApp
                 var response = client.PostAsJsonAsync(App_path + "/api/ServiceTypeAPI/", service).Result;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddOrderForm f = new AddOrderForm();
+            f.ShowDialog();
+            AddOrder(f.item);
+
+            var items = GetOrders();
+            dataGridViewOrders.DataSource = items;
+        }
+
+        private void dataGridViewOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            var indexItem = Convert.ToInt16(senderGrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                var but = (DataGridViewButtonColumn)senderGrid.Columns[e.ColumnIndex];
+                if (but.Text == "Изменить")
+                {
+                    orders = GetIdOrder(indexItem);
+                    AddOrderForm f = new AddOrderForm(orders);
+                    f.ShowDialog();
+                    EditOrder(f.item);
+                }
+
+                else
+                {
+                    DeleteOrder(indexItem);
+
+                }
+
+                var items = GetOrders();
+                dataGridViewOrders.DataSource = items;
+
+            }
+
+        }
+
+        public void EditOrder(Order order)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.PutAsJsonAsync(App_path + "/api/OrderAPI/", order).Result;
+            }
+        }
+
+        
+
     }
 }
